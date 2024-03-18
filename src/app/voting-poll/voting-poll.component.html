@@ -1,11 +1,19 @@
 <div class="container">
   <h2>{{ pollName }}</h2>
 
-  <mat-radio-group class="options-group" [(ngModel)]="selectedOptionId">
-    <mat-radio-button *ngFor="let option of options" [value]="option.optionId">
-      {{ option.optionName }}
-    </mat-radio-button>
-  </mat-radio-group>
+  <div class="options-container">
+    <mat-card class="option-card" *ngFor="let option of options">
+      <mat-radio-group [(ngModel)]="selectedOptionId">
+        <mat-radio-button [value]="option.optionId">
+          {{ option.optionName }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </mat-card>
+  </div>
 
   <button mat-raised-button color="primary" (click)="saveOption()">Save Option</button>
+
+  <div *ngIf="msg" class="success-msg">
+    Poll Voted Successfully....
+</div>
 </div>
