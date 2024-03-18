@@ -1,7 +1,7 @@
 <div class="poll-container" *ngIf="createdPolls.length > 0; else noPolls">
     <ul class="poll-list">
       <li class="poll-item" *ngFor="let poll of createdPolls">
-        <mat-card class="poll-card">
+        <mat-card class="poll-card" (click)="onPollClickInfo(poll)">
           <mat-card-header>
             <div class="status" [ngClass]="{'active': poll.active, 'inactive': !poll.active}">
                 {{ poll.active ? 'Active' : 'Inactive' }}
