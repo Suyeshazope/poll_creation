@@ -1,0 +1,9 @@
+<h2>{{ pollName }}</h2>
+
+<div *ngFor="let option of options">
+  <label>
+    <input type="radio" [(ngModel)]="selectedOptionId" [value]="option.optionId"/>
+    {{ option.optionName }}
+  </label>
+</div>
+<button (click)="saveOption()">Save Option</button>
