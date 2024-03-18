@@ -1,12 +1,23 @@
-<div *ngIf="availablePolls.length > 0; else noPolls">
-    <h2>Available Polls</h2>
-    <ul>
-      <li *ngFor="let poll of availablePolls">
-        {{ poll.title }} 
-      </li>
-    </ul>
-  </div>
-  <ng-template #noPolls>
-    <p>No polls available at the moment.</p>
-  </ng-template>
-  
+<div class="poll-container" *ngIf="availablePolls.length > 0; else noPolls">
+  <ul class="poll-list">
+    <li class="poll-item" *ngFor="let poll of availablePolls">
+      <mat-card class="poll-card">
+        <mat-card-header>
+          <div mat-card-avatar class="poll-avatar">
+            <span>{{ poll.pollName.charAt(0) }}</span>
+          </div>
+          <mat-card-title>{{ poll.pollName }}</mat-card-title>
+          <mat-card-subtitle>Created: {{ poll.creationTime | date:'medium' }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <mat-card-subtitle class="validity-info">Valid for 24 hours</mat-card-subtitle>
+        </mat-card-content>
+      </mat-card>
+    </li>
+  </ul>
+</div>
+<ng-template #noPolls>
+ <div class="no-poll-div">
+  <p class="no-polls-message">No polls available at the moment.</p>
+ </div>
+</ng-template>
