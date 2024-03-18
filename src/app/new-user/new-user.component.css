@@ -1,0 +1,73 @@
+/* Style for the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 80vh;
+}
+
+/* Style for the login form */
+.login-form {
+    width: 300px;
+    /* Adjust as needed */
+    padding: 20px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+    /* background-color: #f9f9f9; */
+}
+
+/* Style for full-width input fields */
+.login-full-width {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Style for the input fields */
+.mat-form-field {
+    display: block;
+}
+
+/* Style for the labels */
+.mat-label {
+    font-weight: bold;
+}
+
+/* Style for the input fields */
+input.mat-input {
+    width: calc(100% - 40px);
+    /* Adjust as needed */
+}
+
+/* Style for the password visibility toggle button */
+button.mat-icon-button {
+    position: relative;
+    top: -2px;
+    /* background-color: black; */
+}
+
+/* Style for the visibility icons */
+mat-icon {
+    font-size: 20px;
+    color: #666;
+}
+
+.login-button {
+    text-align: center;
+}
+
+.login-button button{
+    font-size: 18px;
+    padding: 20px 20px;
+    width: 60%;
+}
+
+.login-msg{
+    color: rgb(218, 61, 236);
+    font-size: 15px;
+}
+
+.login-msg span{
+    text-decoration: underline;
+    cursor: pointer;
+}

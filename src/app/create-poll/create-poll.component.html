@@ -1,0 +1,26 @@
+<div class="container">
+    <form class="custom-form" (ngSubmit)="createPoll()">
+        <mat-form-field class="custom-form-field">
+            <mat-label>Poll Name:</mat-label>
+            <input matInput id="question" name="question" [(ngModel)]="poll.pollName" required>
+        </mat-form-field>
+        
+        <div *ngFor="let option of options; let i = index" class="option-container">
+            <mat-form-field class="custom-form-field">
+                <mat-label>Option {{i + 1}}:</mat-label>
+                <input matInput id="option{{i + 1}}" name="option{{i + 1}}" [(ngModel)]="options[i].text" required>
+                <button mat-icon-button class="remove-button" color="warn" (click)="removeOption(i)">
+                    <mat-icon>remove_circle_outline</mat-icon>
+                </button>
+            </mat-form-field>
+        </div>        
+      
+        <button mat-stroked-button class="custom-button" color="primary" type="button" (click)="addOption()">Add Option</button>
+        
+        <button mat-raised-button class="custom-button" color="primary" type="submit">Create Poll</button>
+        
+        <div *ngIf="msg" class="success-msg">
+            Poll Created Successfully....
+        </div>
+    </form>
+</div>

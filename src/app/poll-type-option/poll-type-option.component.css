@@ -1,0 +1,30 @@
+/* Adjusting button toggle group */
+.mat-button-toggle-group {
+  display: flex;
+  /* flex-wrap: wrap; */
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  border: none;
+}
+
+/* Styling individual button toggles */
+.mat-button-toggle {
+  background-color: #742c8e;
+  color: white; /* Default text color */
+  border-radius: 50px 0;
+  padding: 10px 20px; /* Adjust as needed */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.mat-button-toggle:hover {
+  background-color: #3f0c52; /* Darker shade on hover */
+}
+
+/* Active state */
+.mat-button-toggle.mat-button-toggle-checked {
+  background-color: #3f0c52; /* Darker shade when toggled */
+  border: 2px solid #742c8e;
+}

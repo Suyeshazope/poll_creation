@@ -1,0 +1,48 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    height: 80vh; /* This ensures the container takes the full height of the viewport */  
+    /* overflow-y: scroll; */
+}
+
+.custom-form {
+    max-width: 600px; /* Adjust the max-width as needed */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.custom-form-field {
+    width: 100%;
+}
+
+.mat-input-element {
+    font-size: 18px; /* Adjust the font-size as needed */
+}
+
+.custom-button {
+    width: 100%;
+    margin-top: 10px; /* Add some space between buttons */
+}
+
+.option-container {
+    position: relative;
+}
+
+.remove-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* left: 10px; */
+}
+
+.success-msg{
+    text-align: center;
+    color: rgb(26, 218, 26);
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+

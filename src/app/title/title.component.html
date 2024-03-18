@@ -1,0 +1,38 @@
+<!-- <div> -->
+    <mat-toolbar color="primary">
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="toggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>QuickVote</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+            <mat-icon>share</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav opened="true">
+            <mat-nav-list>
+                <mat-list-item routerLink="polloption" routerLinkActive="router-link-active" >
+                    <button mat-button><mat-icon>home</mat-icon>Home</button>
+                </mat-list-item>
+                <mat-list-item routerLink="createpoll">
+                    <button mat-button><mat-icon>poll</mat-icon>Create Poll</button>
+                </mat-list-item>
+                <mat-list-item routerLink="account">
+                    <button mat-button><mat-icon>account_circle</mat-icon>Profile</button>
+                </mat-list-item>
+                <mat-list-item routerLink="login">
+                    <button mat-button><mat-icon>logout</mat-icon>Logout</button>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <div style="height: 91vh;">
+                <router-outlet></router-outlet>
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+<!-- </div> -->
