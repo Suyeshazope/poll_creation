@@ -25,4 +25,9 @@ export class PollService {
     const url = `${this.url}/availablepolls`;
     return this.http.get<any>(url) ;
   }
+
+  getAllPollsByUser(userName:string):Observable<any>{
+    const url = `${this.url}/getpolls/`+userName;
+    return this.http.get<any>(url);
+  }
 }
