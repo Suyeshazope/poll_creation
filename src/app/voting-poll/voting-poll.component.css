@@ -6,18 +6,28 @@
     height: 80vh; /* Set the height to the viewport height */
   }
   
-  h2{
-    font-size: 30px;
+  .options-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 20px;
   }
-  .options-group {
-    /* display: flex;
-    flex-direction: column; */
-    margin-top: 10px;
-    font-size: 30px;
+  
+  .option-card {
+    margin: 10px;
+    padding: 15px;
+    min-width: 400px; /* Set the minimum width of the card */
   }
   
   mat-radio-button {
     display: block;
-    margin-bottom: 20px;
   }
+
+  .success-msg{
+    text-align: center;
+    color: rgb(26, 218, 26);
+    font-size: 15px;
+    margin-top: 20px;
+}
   

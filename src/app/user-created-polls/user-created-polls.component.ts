@@ -3,11 +3,12 @@ import { PollService } from '../poll.service';
 import { UserService } from '../user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { MatCard , MatCardHeader , MatCardAvatar , MatCardTitle , MatCardSubtitle ,MatCardContent } from '@angular/material/card';
 
 @Component({
   selector: 'app-user-created-polls',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule , MatCard , MatCardHeader , MatCardTitle , MatCardSubtitle , MatCardContent ,MatCardAvatar],
   templateUrl: './user-created-polls.component.html',
   styleUrl: './user-created-polls.component.css',
 })

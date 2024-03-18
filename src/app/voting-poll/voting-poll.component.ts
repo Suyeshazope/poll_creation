@@ -5,11 +5,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {MatRadioButton , MatRadioGroup} from '@angular/material/radio'
 import { MatButtonModule} from '@angular/material/button'
+import { MatCard } from '@angular/material/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voting-poll',
   standalone: true,
-  imports: [CommonModule , FormsModule , MatRadioButton , MatRadioGroup , MatButtonModule],
+  imports: [CommonModule , FormsModule , MatRadioButton , MatRadioGroup , MatButtonModule , MatCard],
   templateUrl: './voting-poll.component.html',
   styleUrl: './voting-poll.component.css'
 })
@@ -17,8 +19,9 @@ export class VotingPollComponent {
   pollId = 0 ;
   options: any[] = [];
   selectedOptionId = 0;
+  msg = false ;
 
-  constructor(private pollService: PollService , private userService : UserService) { }
+  constructor(private pollService: PollService , private userService : UserService , private router : Router) { }
 
   pollName = this.pollService.getPollName() ;
   userName = this.userService.getUserName() ;
@@ -44,7 +47,10 @@ export class VotingPollComponent {
     console.log(this.selectedOptionId);
     this.pollService.saveVote(this.pollId , this.selectedOptionId , this.userName).subscribe((data) => {
       console.log(data);
-      
+      this.msg = true;
+      setTimeout(() => {
+        this.router.navigateByUrl('home/polloption/available-polls')
+      }, 1500);
     })
   }
 }
