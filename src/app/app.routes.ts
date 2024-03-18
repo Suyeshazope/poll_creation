@@ -12,7 +12,7 @@ export const routes: Routes = [
     {path: 'newuser' , component : NewUserComponent} ,
     {path: 'home', component : HomeComponent , children : [
         {path : 'polloption' , component : PollTypeOptionComponent , children : [
-            {path : 'available-polls' , component : AvailablePollComponent}
+            {path : 'available-polls' , component : AvailablePollComponent} ,
         ] } ,
         {path : 'createpoll' , component : CreatePollComponent} ,
         {path : 'account',component : ProfileComponent} ,
