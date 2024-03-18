@@ -1,6 +1,24 @@
-<!-- <p>user-created-polls works!</p> -->
-<div>
-    <div *ngFor="let poll of createdPolls">
-        {{poll.pollName}}
-    </div>
-</div>
+<div class="poll-container" *ngIf="createdPolls.length > 0; else noPolls">
+    <ul class="poll-list">
+      <li class="poll-item" *ngFor="let poll of createdPolls">
+        <mat-card class="poll-card">
+          <mat-card-header>
+            <div class="status" [ngClass]="{'active': poll.active, 'inactive': !poll.active}">
+                {{ poll.active ? 'Active' : 'Inactive' }}
+            </div>
+            <div mat-card-avatar class="poll-avatar">
+              <span>{{ poll.pollName.charAt(0) }}</span>
+            </div>
+            <mat-card-title>{{ poll.pollName }}</mat-card-title>
+            <mat-card-subtitle>Created: {{ poll.creationTime | date:'medium' }}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noPolls>
+   <div class="no-poll-div">
+    <p class="no-polls-message">No polls available at the moment.</p>
+   </div>
+  </ng-template>
+  
