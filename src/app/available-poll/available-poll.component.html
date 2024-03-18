@@ -1,7 +1,7 @@
 <div class="poll-container" *ngIf="availablePolls.length > 0; else noPolls">
   <ul class="poll-list">
     <li class="poll-item" *ngFor="let poll of availablePolls">
-      <mat-card class="poll-card">
+      <mat-card class="poll-card" (click)="onPollCardClicked(poll)"  >
         <mat-card-header>
           <div mat-card-avatar class="poll-avatar">
             <span>{{ poll.pollName.charAt(0) }}</span>
