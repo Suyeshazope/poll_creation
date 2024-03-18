@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { CreatePollComponent } from './create-poll/create-poll.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AvailablePollComponent } from './available-poll/available-poll.component';
+import { VotingPollComponent } from './voting-poll/voting-poll.component';
 
 export const routes: Routes = [
     {path: 'login', component : LoginComponent} ,
@@ -15,6 +16,7 @@ export const routes: Routes = [
             {path : 'available-polls' , component : AvailablePollComponent} ,
         ] } ,
         {path : 'createpoll' , component : CreatePollComponent} ,
+        {path : 'votingpoll' , component : VotingPollComponent} ,
         {path : 'account',component : ProfileComponent} ,
         {path:'',redirectTo:'polloption',pathMatch:'full'},
     ]} ,
