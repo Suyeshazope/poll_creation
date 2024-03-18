@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { CreatePollComponent } from './create-poll/create-poll.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AvailablePollComponent } from './available-poll/available-poll.component';
+import { UserCreatedPollsComponent } from './user-created-polls/user-created-polls.component';
 
 export const routes: Routes = [
     {path: 'login', component : LoginComponent} ,
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path: 'home', component : HomeComponent , children : [
         {path : 'polloption' , component : PollTypeOptionComponent , children : [
             {path : 'available-polls' , component : AvailablePollComponent} ,
+            {path : 'created-polls',component : UserCreatedPollsComponent}
         ] } ,
         {path : 'createpoll' , component : CreatePollComponent} ,
         {path : 'account',component : ProfileComponent} ,
