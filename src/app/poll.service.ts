@@ -14,6 +14,24 @@ export class PollService {
   }
   constructor(private http: HttpClient) { }
 
+  pollName = ""
+  setPollName(pollName: string) {
+    this.pollName = pollName ;
+  }
+
+  getPollName() {
+    return this.pollName;
+  }
+
+  pollId = 0
+  setPollId(pollId: number) {
+    this.pollId = pollId ;
+  }
+
+  getPollId() {
+    return this.pollId;
+  }
+
   createPoll(pollData: any): Observable<any> {
     console.log(pollData);
     
@@ -26,8 +44,13 @@ export class PollService {
     return this.http.get<any>(url) ;
   }
 
-  getAllPollsByUser(userName:string):Observable<any>{
-    const url = `${this.url}/getpolls/`+userName;
+  getOptions(pollId: number): Observable<any> {
+    const url = `${this.url}/options/${pollId}`;
     return this.http.get<any>(url);
+  }
+
+  saveVote(pollId : number , optionId : number , userName : string): Observable<any> {
+    const url = `${this.url}/savevote`;
+    return this.http.post<any>(url, {pollId , optionId , userName});
   }
 }

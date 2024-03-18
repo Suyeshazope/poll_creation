@@ -1,34 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { PollService } from '../poll.service';
-import { UserService } from '../user.service';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user-created-polls',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [],
   templateUrl: './user-created-polls.component.html',
-  styleUrl: './user-created-polls.component.css',
+  styleUrl: './user-created-polls.component.css'
 })
-export class UserCreatedPollsComponent implements OnInit {
-  constructor(
-    private pollService: PollService,
-    private userService: UserService
-  ) {}
+export class UserCreatedPollsComponent {
 
-  ngOnInit(): void {
-    this.getData();
-  }
-
-  createdPolls:any[] = [];
-
-  getData() {
-    this.pollService
-      .getAllPollsByUser(this.userService.getUserName())
-      .subscribe((data) => {
-        console.log(data);
-        this.createdPolls = data;
-      });
-  }
 }
