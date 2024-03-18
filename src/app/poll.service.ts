@@ -53,4 +53,10 @@ export class PollService {
     const url = `${this.url}/savevote`;
     return this.http.post<any>(url, {pollId , optionId , userName});
   }
+
+  getAllPollsByUser(userName:string):Observable<any>{
+    const url = `${this.url}/getpolls/`+userName;
+    return this.http.get<any>(url);
+  }
+
 }
