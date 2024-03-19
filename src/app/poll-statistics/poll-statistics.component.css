@@ -1,0 +1,57 @@
+.poll-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.sub-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.left-side,
+.right-side {
+  width: 48%;
+}
+
+.pie-chart-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.option-card {
+  /* background-color: #9c27b0; */
+  color: #fff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.option-card .mat-card-content {
+  padding: 20px;
+}
+
+.option-card p {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.option-card ul {
+  /* list-style-type: none; */
+  padding-left: 0;
+}
+
+.option-card li {
+  margin-left: 10px;
+}
+
+h2 {
+  /* color: #9c27b0; */
+  /* font-size: 30px; */
+  font-weight: bold;
+}

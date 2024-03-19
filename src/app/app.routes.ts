@@ -18,12 +18,12 @@ export const routes: Routes = [
         {path : 'polloption' , component : PollTypeOptionComponent , children : [
             {path : 'available-polls' , component : AvailablePollComponent} ,
             {path : 'created-polls',component : UserCreatedPollsComponent},
-            {path : 'showStats' , component : PollStatisticsComponent},
             {path : 'voted-polls',component : VotedPollsComponent}
         ] } ,
         {path : 'createpoll' , component : CreatePollComponent} ,
         {path : 'votingpoll' , component : VotingPollComponent} ,
         {path : 'account',component : ProfileComponent} ,
+        {path : 'showStats' , component : PollStatisticsComponent} ,
         {path:'',redirectTo:'polloption',pathMatch:'full'},
     ]} ,
     {path:'',redirectTo:'login',pathMatch:'full'},
