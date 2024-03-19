@@ -4,6 +4,7 @@ import { UserService } from '../user.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatCard , MatCardHeader , MatCardAvatar , MatCardTitle , MatCardSubtitle ,MatCardContent } from '@angular/material/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-created-polls',
@@ -13,9 +14,11 @@ import { MatCard , MatCardHeader , MatCardAvatar , MatCardTitle , MatCardSubtitl
   styleUrl: './user-created-polls.component.css',
 })
 export class UserCreatedPollsComponent implements OnInit {
+
   constructor(
     private pollService: PollService,
-    private userService: UserService
+    private userService: UserService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -31,5 +34,10 @@ export class UserCreatedPollsComponent implements OnInit {
         console.log(data);
         this.createdPolls = data;
       });
+  }
+
+  onPollClickInfo(poll: any) {
+    this.pollService.setPollId(poll.pollId);
+    this.router.navigateByUrl("home/polloption/showStats")
   }
 }
