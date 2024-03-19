@@ -59,4 +59,9 @@ export class PollService {
     return this.http.get<any>(url);
   }
 
+  getPollStatistics(pollId:number):Observable<any>{
+    const url = `${this.url}/statistics/`+pollId;
+    return this.http.get<any>(url);
+  }
+
 }
