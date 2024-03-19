@@ -64,4 +64,9 @@ export class PollService {
     return this.http.get<any>(url);
   }
 
+  getVotedPolls(userName:string):Observable<any>{
+    const url = `${this.url}/getvotedpolls/`+userName;
+    return this.http.get<any>(url);
+  }
+
 }

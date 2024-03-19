@@ -9,6 +9,7 @@ import { AvailablePollComponent } from './available-poll/available-poll.componen
 import { VotingPollComponent } from './voting-poll/voting-poll.component';
 import { UserCreatedPollsComponent } from './user-created-polls/user-created-polls.component';
 import { PollStatisticsComponent } from './poll-statistics/poll-statistics.component';
+import { VotedPollsComponent } from './voted-polls/voted-polls.component';
 
 export const routes: Routes = [
     {path: 'login', component : LoginComponent} ,
@@ -17,6 +18,7 @@ export const routes: Routes = [
         {path : 'polloption' , component : PollTypeOptionComponent , children : [
             {path : 'available-polls' , component : AvailablePollComponent} ,
             {path : 'created-polls',component : UserCreatedPollsComponent},
+            {path : 'voted-polls',component : VotedPollsComponent}
         ] } ,
         {path : 'createpoll' , component : CreatePollComponent} ,
         {path : 'votingpoll' , component : VotingPollComponent} ,
