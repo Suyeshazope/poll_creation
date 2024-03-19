@@ -38,6 +38,7 @@ export class UserCreatedPollsComponent implements OnInit {
 
   onPollClickInfo(poll: any) {
     this.pollService.setPollId(poll.pollId);
-    this.router.navigateByUrl("home/polloption/showStats")
+    this.pollService.setPollName(poll.pollName);
+    this.router.navigateByUrl("home/showStats")
   }
 }

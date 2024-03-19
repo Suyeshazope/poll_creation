@@ -1,6 +1,22 @@
-<!-- <p>poll-statistics works!</p> -->
-<div *ngFor="let stat in pollStats">
-
-    <!-- <h2>{{stat.optionname}}</h2> -->
-
+<div class="poll-container">
+  <div>
+    <h2>{{ pollName }}</h2>
+  </div>
+  <div class="sub-container">
+    <div class="left-side">
+      <div class="pie-chart-container">
+        <canvas id="myChart" class="pie-chart"></canvas>
+      </div>
+    </div>
+    <div class="right-side">
+      <mat-card *ngFor="let option of pollStats" class="option-card">
+        <mat-card-content>
+          <p>Option : {{ option.optionName }}</p>
+          <ul>
+            <li *ngFor="let user of option.userName">{{ user }}</li>
+          </ul>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
