@@ -10,6 +10,8 @@ import { VotingPollComponent } from './voting-poll/voting-poll.component';
 import { UserCreatedPollsComponent } from './user-created-polls/user-created-polls.component';
 import { PollStatisticsComponent } from './poll-statistics/poll-statistics.component';
 import { VotedPollsComponent } from './voted-polls/voted-polls.component';
+import { UpdatePollComponent } from './update-poll/update-poll.component';
+import { ExpiredPollComponent } from './expired-poll/expired-poll.component';
 
 export const routes: Routes = [
     {path: 'login', component : LoginComponent} ,
@@ -22,6 +24,8 @@ export const routes: Routes = [
         ] } ,
         {path : 'createpoll' , component : CreatePollComponent} ,
         {path : 'votingpoll' , component : VotingPollComponent} ,
+        {path : 'updatepoll' , component : UpdatePollComponent} ,
+        {path : 'expiredpoll' , component : ExpiredPollComponent} ,
         {path : 'account',component : ProfileComponent} ,
         {path : 'showStats' , component : PollStatisticsComponent} ,
         {path:'',redirectTo:'polloption',pathMatch:'full'},

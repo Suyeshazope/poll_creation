@@ -4,18 +4,21 @@ import { Init } from 'v8';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../user.service';
+import { MatCard, MatCardHeader, MatCardSubtitle, MatCardTitle } from '@angular/material/card';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-voted-polls',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule , MatCard , MatCardHeader , MatCardTitle , MatCardSubtitle],
   templateUrl: './voted-polls.component.html',
   styleUrl: './voted-polls.component.css',
 })
 export class VotedPollsComponent implements OnInit {
   constructor(
     private userService: UserService,
-    private pollService: PollService
+    private pollService: PollService ,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
@@ -25,10 +28,11 @@ export class VotedPollsComponent implements OnInit {
   
   pollDetail: any[] = [];
   votedOptionId: number = 0;
+  message = '' ;
   getVotedPolls() {
     this.userName = this.userService.getUserName();
     this.pollService.getVotedPolls(this.userName).subscribe((data) => {
-      // console.log(data);
+      console.log(data);
       // we have data[i].optionId && data[i].pollId
 
       for (let i = 0; i < data.length; i++) {
@@ -59,5 +63,17 @@ export class VotedPollsComponent implements OnInit {
       
       // console.log(this.pollDetail);
     });
+  }
+
+  navigateToPoll(poll: any) {
+    if (poll.active) {
+      // Navigate to another page
+      this.pollService.setPollName(poll.pollName) ;
+      this.pollService.setPollId(poll.pollId);
+      this.router.navigateByUrl('home/updatepoll'); // Adjust the route as per your application
+    } 
+    else{
+      this.router.navigateByUrl('home/expiredpoll');
+    }
   }
 }

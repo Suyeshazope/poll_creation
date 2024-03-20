@@ -54,6 +54,11 @@ export class PollService {
     return this.http.post<any>(url, {pollId , optionId , userName});
   }
 
+  updateVote(pollId : number , optionId : number , userName : string): Observable<any> {
+    const url = `${this.url}/updatevote`;
+    return this.http.put<any>(url, {pollId , optionId , userName});
+  }
+
   getAllPollsByUser(userName:string):Observable<any>{
     const url = `${this.url}/getpolls/`+userName;
     return this.http.get<any>(url);
