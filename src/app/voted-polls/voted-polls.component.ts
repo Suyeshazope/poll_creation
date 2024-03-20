@@ -53,15 +53,13 @@ export class VotedPollsComponent implements OnInit {
             this.pollDetail.push(optionAndPollName);
             }
           }
-          console.log("-----------------");
-      console.log("voted polls length = "+this.pollDetail.length);
-      for(let k = 0 ; k < this.pollDetail.length ; k++){
-        console.log(this.pollDetail[k]);
-      }
+      //     console.log("-----------------");
+      // console.log("voted polls length = "+this.pollDetail.length);
+      // for(let k = 0 ; k < this.pollDetail.length ; k++){
+      //   console.log(this.pollDetail[k]);
+      // }
         });
-      }
-      
-      // console.log(this.pollDetail);
+      }      
     });
   }
 
