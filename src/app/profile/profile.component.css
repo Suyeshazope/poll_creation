@@ -1,0 +1,79 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Light grey background */
+  }
+  
+  .custom-card {
+    width: 400px; /* Purple background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Box shadow */
+  }
+  
+  .mat-card-title {
+    color: white; /* White title text */
+    text-align: center; /* Center align title */
+    margin-bottom: 20px; /* Add margin */
+  }
+
+  .header{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+
+  .button{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .mat-card-actions {
+    display: flex;
+    /* justify-content: center; */
+    text-align: center;
+    margin-top: 20px; /* Add margin */
+  }
+  
+  .mat-raised-button {
+    margin: 0 10px; /* Add margin */
+  }
+  
+  .mat-input {
+    width: calc(100% - 25px); /* Adjusting width to accommodate button */
+    height: 20px; /* Increased height */
+    border-radius: 5px; /* Rounded corners */
+    border: none;
+    padding: 10px; /* Padding */
+    background-color: rgba(38, 36, 36, 0.1); /* Transparent background */
+    color: rgb(254, 254, 254); /* Text color */
+    box-shadow: inset 0 0 5px rgba(231, 181, 252, 0.5); /* Inner shadow */
+    position: relative; /* Required for absolute positioning */
+  }
+  
+  .mat-input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(231, 181, 252, 0.5); /* Focus style */
+  }
+  
+  .mat-form-field-custom {
+    margin-bottom: 20px; /* Margin between fields */
+  }
+  
+  .password-input {
+    position: relative;
+  }
+
+  .password-input button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mat-icon {
+    color: #757575; /* Icon color */
+  }
+  

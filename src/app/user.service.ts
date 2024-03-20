@@ -33,4 +33,13 @@ export class UserService {
     return this.http.post<any>(url , {userName , password , email}) ;
   }
 
+  getUserInfo(userName: string): Observable<any> {
+    const url = `${this.url}/getuser/${userName}`;
+    return this.http.get<any>(url) ;
+  }
+
+  updateProfile(userName : string ,email : string , password : string){
+    const url = `${this.url}/updateuser`;
+    return this.http.put<any>(url , {userName , email , password}) ;
+  }
 }

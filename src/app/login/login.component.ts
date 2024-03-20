@@ -31,8 +31,8 @@ export class LoginComponent {
     this.userService.login(this.userName, this.password).subscribe(
       (response) => {
         console.log(response);
-        console.log(typeof (response));
-        console.log(response.userName);
+        // console.log(typeof (response));
+        // console.log(response.userName);
         
 
         this.userService.setUserName(response.userName) ;
@@ -47,12 +47,5 @@ export class LoginComponent {
         console.log(error);
       }
     )
-
-    // this.userService.availablePoll().subscribe(
-    //   (data) => {
-    //     console.log(data);
-    // this.router.navigateByUrl('/home')
-    //   }
-    // )
   }
 }
