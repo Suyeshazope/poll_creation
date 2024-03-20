@@ -59,9 +59,7 @@ export class VotedPollsComponent implements OnInit {
       //   console.log(this.pollDetail[k]);
       // }
         });
-      }
-      
-      // console.log(this.pollDetail);
+      }      
     });
   }
 
