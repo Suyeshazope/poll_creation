@@ -7,7 +7,6 @@ import { Chart } from 'chart.js/auto';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCard, MatCardContent, MatCardHeader, MatCardTitle } from '@angular/material/card';
 import { MatGridList , MatGridTile} from '@angular/material/grid-list'
-import { pipeline } from 'node:stream';
 // import { Pipe } from '@angular/core';
 
 @Component({

@@ -1,11 +1,27 @@
-<div>
-<p>voted-polls works!</p>
-<div *ngFor="let poll of pollDetail">
-    {{ poll.pollName }}<br>
-    {{ poll.optionName }}<br>
-    {{ poll.pollId }}<br>
-    {{ poll.active }}<br>
-    {{ poll.optionId }}<br>
-    <hr>
-</div>
-</div>
+<div class="poll-container" *ngIf="pollDetail.length > 0; else noPolls">
+    <ul class="poll-list">
+      <li class="poll-item" *ngFor="let poll of pollDetail">
+        <mat-card class="poll-card" (click)="navigateToPoll(poll)">
+          <mat-card-header>
+            <div class="status" [ngClass]="{'active': poll.active, 'inactive': !poll.active}">
+                {{ poll.active ? 'Active' : 'Inactive' }}
+            </div>
+            <div mat-card-avatar class="poll-avatar">
+              <span>{{ poll.pollName.charAt(0) }}</span>
+            </div>
+            <mat-card-title>{{ poll.pollName }}</mat-card-title>
+            <mat-card-subtitle>Selected Option: {{ poll.optionName}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+        <div class="expired-message">
+            {{message}}
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ng-template #noPolls>
+   <div class="no-poll-div">
+    <p class="no-polls-message">you haven't voted any poll..!!</p>
+   </div>
+  </ng-template>
+  

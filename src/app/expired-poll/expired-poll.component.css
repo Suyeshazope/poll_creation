@@ -1,0 +1,19 @@
+.poll-expired-message {
+    color: #a00202; /* Dark gray text */
+    /* background-color: #fcb0b06c; */
+    padding: 40px;
+    border-radius: 8px; /* Lighter gray border */
+    box-shadow: 0 2px 4px rgba(67, 28, 28, 0.957); /* Subtle shadow */
+    /* margin-bottom: 20px; */
+    text-align: center;
+    /* margin-top: 40px; */
+    margin: 40px 40px;
+  }
+  
+  .poll-expired-message p {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  
