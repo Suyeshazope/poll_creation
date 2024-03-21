@@ -42,6 +42,9 @@ export class CreatePollComponent {
           // this.router.navigate(['/polls']);
           if(this.poll.userName.length != 0 && this.poll.pollName != null && this.poll.optionName != null){
             this.msg = true ;
+            setTimeout(() => {
+              this.router.navigateByUrl('home/polloption/created-polls');
+            }, 1500);
           }
         },
         (error) => {

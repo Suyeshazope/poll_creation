@@ -3,11 +3,11 @@
   <form class="login-form" (submit)="login()">
     <mat-form-field class="login-full-width">
       <mat-label>User Name :</mat-label>
-      <input matInput [(ngModel)]="userName" placeholder="Enter your UserName" name="userName">
+      <input matInput [formControl]="userName" placeholder="Enter your UserName" name="userName">
     </mat-form-field>
     <mat-form-field class="login-full-width">
       <mat-label>Password</mat-label>
-      <input matInput [(ngModel)]="password" placeholder="Enter your Password" name="password" [type]="hide ? 'password' : 'text'" #passwordInput>
+      <input matInput [formControl]="password" placeholder="Enter your Password" name="password" [type]="hide ? 'password' : 'text'" #passwordInput>
       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
         [attr.aria-pressed]="hide">
         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
@@ -16,7 +16,7 @@
     <div class="login-button">
       <button mat-raised-button color="primary" type="submit">Login</button>
     </div>
-    <div *ngIf="valid">Invalid Credentials</div>
+    <div *ngIf="valid" class="error-message">{{msg}}</div>
   </form>
   <div class="login-msg">Don't have any account? <span (click)="navigateToSignUp()">Sign Up</span></div>
 </div>

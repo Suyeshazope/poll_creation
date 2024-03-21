@@ -68,10 +68,10 @@ export class AvailablePollComponent implements OnInit {
               this.votedPolls2.push(this.availablePolls2[i]);
             }
           }
-          console.log(this.availablePolls);
-          console.log("voted poll ---------");
-          console.log(this.votedPolls2);
-          console.log("--------------");
+          // console.log(this.availablePolls);
+          // console.log("voted poll ---------");
+          // console.log(this.votedPolls2);
+          // console.log("--------------");
           // for (let i = 0; i < this.availablePolls.length; i++) {
           //   console.log(this.availablePolls[i].creationTime.substring(11, 16));
           //   // console.log(typeof(this.availablePolls[i].creationTime))

@@ -32,6 +32,15 @@ export class PollService {
     return this.pollId;
   }
 
+  optionId = ""
+  setOptionId(OptionId: string) {
+    this.optionId = OptionId ;
+  }
+
+  getOptionId() {
+    return this.optionId;
+  }
+
   createPoll(pollData: any): Observable<any> {
     console.log(pollData);
     
