@@ -2,7 +2,7 @@
 <div class="login-container">
     <form class="login-form" (submit)="addUser()">
         <mat-form-field class="login-full-width">
-          <mat-label>User Name :</mat-label>
+          <mat-label>User Name</mat-label>
           <input matInput placeholder="Enter your UserName" [formControl]="userName">
         </mat-form-field>
         <mat-form-field class="login-full-width">
@@ -23,6 +23,7 @@
           <div class="login-button">
           <button mat-raised-button color="primary" type="submit">Sign Up</button>
         </div>
+        <div *ngIf="valid" class="error-message">{{msg}}</div>
     </form> 
     <div class="login-msg">Don't have any account? <span (click)="navigateToLogin()">Log In</span></div> 
 </div>

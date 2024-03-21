@@ -25,6 +25,7 @@ export class UpdatePollComponent {
 
   pollName = this.pollService.getPollName() ;
   userName = this.userService.getUserName() ;
+  optionId1 = this.pollService.getOptionId() ;
   // pollId = this.pollService.getPollId() ;
 
   ngOnInit(): void {
@@ -32,11 +33,11 @@ export class UpdatePollComponent {
   }
 
   loadOptions() {
-    console.log();
+    console.log(this.optionId1);
     this.pollId = this.pollService.getPollId() ;
     this.pollService.getOptions(this.pollId)
       .subscribe(options => {
-        console.log(options);
+        // console.log(options);
         
         this.options = options;
       });
@@ -46,7 +47,7 @@ export class UpdatePollComponent {
     // Here, you can handle saving the selected options, such as sending them to a server or performing any other necessary action
     console.log(this.selectedOptionId);
     this.pollService.updateVote(this.pollId , this.selectedOptionId , this.userName).subscribe((data) => {
-      console.log(data);
+      // console.log(data);
       this.msg = true;
       setTimeout(() => {
         this.router.navigateByUrl('home/polloption/voted-polls')

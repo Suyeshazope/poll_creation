@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PollService } from '../poll.service';
-import { Init } from 'v8';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { UserService } from '../user.service';
@@ -68,6 +67,7 @@ export class VotedPollsComponent implements OnInit {
       // Navigate to another page
       this.pollService.setPollName(poll.pollName) ;
       this.pollService.setPollId(poll.pollId);
+      this.pollService.setOptionId(poll.optionId);
       this.router.navigateByUrl('home/updatepoll'); // Adjust the route as per your application
     } 
     else{
