@@ -10,7 +10,7 @@
           <mat-card-subtitle>Created: {{ poll.creationTime | date:'medium' }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <mat-card-subtitle class="validity-info">Valid for {{remainingTime(poll.creationTime).hours}} hours {{remainingTime(poll.creationTime).min}} minuites</mat-card-subtitle>
+          <mat-card-subtitle class="validity-info">Valid for {{remainingTime(poll.creationTime).hours}} hours {{remainingTime(poll.creationTime).minutes}} minutes</mat-card-subtitle>
         </mat-card-content>
       </mat-card>
     </li>
@@ -29,7 +29,7 @@
           <mat-card-subtitle>Created: {{ poll.creationTime | date:'medium' }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <mat-card-subtitle class="validity-info">Valid for {{remainingTime(poll.creationTime).hours}} hours {{remainingTime(poll.creationTime).min}} minuites</mat-card-subtitle>
+          <mat-card-subtitle class="validity-info">Valid for {{remainingTime(poll.creationTime).hours}} hours {{remainingTime(poll.creationTime).minutes}} minutes</mat-card-subtitle>
         </mat-card-content>
       </mat-card>
       
