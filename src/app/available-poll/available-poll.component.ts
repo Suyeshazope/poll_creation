@@ -69,9 +69,9 @@ export class AvailablePollComponent implements OnInit {
             }
           }
           console.log(this.availablePolls);
-          console.log("voted poll ---------");
+          console.log('voted poll ---------');
           console.log(this.votedPolls2);
-          console.log("--------------");
+          console.log('--------------');
           // for (let i = 0; i < this.availablePolls.length; i++) {
           //   console.log(this.availablePolls[i].creationTime.substring(11, 16));
           //   // console.log(typeof(this.availablePolls[i].creationTime))
@@ -92,26 +92,24 @@ export class AvailablePollComponent implements OnInit {
     let creationTime = time.substring(11, 16);
     let hours = +time.substring(11, 13);
     let min = +time.substring(14, 16);
-    // console.log(creationTime);
-    // console.log(hours);
-    // console.log(min);
-    // console.log('-----------------------');
-    let remHours =0
-    if(hours < 12){
-      remHours = hours + 23 - this.now.getHours() ;
-    }else{
-      remHours = hours + 23 - this.now.getHours() - 24;
+
+    let remHours = 0;
+    if (hours < 12) {
+      remHours = hours + 24 - this.now.getHours();
+    } else {
+      remHours = hours + 24 - this.now.getHours() - 24;
     }
-    
+
     if (remHours < 0) remHours *= -1;
+    if (remHours > 23) remHours = 0;
     let remMin = min - this.now.getMinutes();
     if (remMin < 0) remMin *= -1;
-    // console.log(remHours);
-    // console.log(remMin);
+
     const obj = {
       hours: remHours,
-      min: remMin,
+      minutes: remMin,
     };
     return obj;
   }
+ 
 }
