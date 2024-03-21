@@ -16,4 +16,7 @@
   <div *ngIf="msg" class="success-msg">
     Poll Voted Successfully....
 </div>
+<div *ngIf="!isVoted" class="error-msg">
+  Please Select an option before submitting....
+</div>
 </div>
