@@ -6,7 +6,7 @@ import { MatSidenav, MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconButton } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 
 @Component({
@@ -19,7 +19,13 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 export class TitleComponent {
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
+  constructor(private router : Router){}
+
   toggleSidenav() {
     this.sidenav.toggle();
+  }
+
+  logout() {
+    window.location.href = '/login';
   }
 }

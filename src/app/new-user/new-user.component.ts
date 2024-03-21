@@ -7,29 +7,32 @@ import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angula
 import { Router } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { UserService } from '../user.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-new-user',
   standalone: true,
-  imports: [MatButtonModule , MatFormFieldModule , MatIcon , MatInputModule , FormsModule , ReactiveFormsModule , HeaderComponent],
+  imports: [MatButtonModule , MatFormFieldModule , MatIcon , MatInputModule , FormsModule , ReactiveFormsModule , HeaderComponent , CommonModule],
   templateUrl: './new-user.component.html',
   styleUrl: './new-user.component.css'
 })
 export class NewUserComponent {
   // userName = '' ;
   // password = '' ;
-  userName = new FormControl('') ;
-  password = new FormControl('') ;
+  userName = new FormControl('' , [Validators.required]) ;
+  password = new FormControl('' , [Validators.required]) ;
   // email1 = ''
   email = new FormControl('', [Validators.required, Validators.email]);
   hide = true ;
+  valid = false ;
+  msg = '' ;
 
   constructor(private userService : UserService , private router : Router){} 
 
   getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
+    // if (this.email.hasError('required')) {
+    //   return 'You must enter a value';
+    // }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
@@ -42,6 +45,13 @@ export class NewUserComponent {
     const emailValue: string = this.email.value || '';
     const userName: string = this.userName.value || '';
     const password: string = this.password.value || ''; 
+
+    if(userName == null || password == null || emailValue == null || userName.trim() === '' || password.trim() === '' || emailValue.trim() === ''){
+      this.valid = true ;
+      this.msg = "Username , email and password are required fields."
+      return ;
+    }
+
     this.userService.adduser(userName, password , emailValue).subscribe(
       (response) => {
         console.log(response);
