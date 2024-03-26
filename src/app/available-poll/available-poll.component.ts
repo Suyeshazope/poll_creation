@@ -48,8 +48,13 @@ export class AvailablePollComponent implements OnInit {
         .getVotedPolls(this.userService.getUserName())
         .subscribe((votedPolls) => {
           this.votedPollsList = votedPolls;
-
+          // console.log(votedPolls.creationTime);
+          
           this.availablePolls2 = data;
+          console.log(data);
+          
+          console.log(data[0].creationTime);
+          
 
           for (let i = 0; i < this.availablePolls2.length; i++) {
             // iterate for each elemet in 2nd array
@@ -87,29 +92,40 @@ export class AvailablePollComponent implements OnInit {
     this.router.navigateByUrl('home/votingpoll');
   }
 
-  now = new Date();
-  remainingTime(time: any) {
-    let creationTime = time.substring(11, 16);
-    let hours = +time.substring(11, 13);
-    let min = +time.substring(14, 16);
+  // now = new Date();
+  remainingTime(creationTime: any) {
+    // let creationTime = time.substring(11, 16);
+    // let hours = +time.substring(11, 13);
+    // let min = +time.substring(14, 16);
 
-    let remHours = 0;
-    if (hours < 12) {
-      remHours = hours + 24 - this.now.getHours();
-    } else {
-      remHours = hours + 24 - this.now.getHours() - 24;
-    }
+    // let remHours = 0;
+    // if (hours < 12) {
+    //   remHours = hours + 24 - this.now.getHours();
+    // } else {
+    //   remHours = hours + 24 - this.now.getHours() - 24;
+    // }
 
-    if (remHours < 0) remHours *= -1;
-    if (remHours > 23) remHours = 0;
-    let remMin = min - this.now.getMinutes();
-    if (remMin < 0) remMin *= -1;
+    // if (remHours < 0) remHours *= -1;
+    // if (remHours > 23) remHours = 0;
+    // let remMin = min - this.now.getMinutes();
+    // if (remMin < 0) remMin *= -1;
+    creationTime = new Date(creationTime);
+
+    const currentTime = new Date();
+    const expirationTime = new Date(creationTime.getTime() + 24 * 60 * 60 * 1000);
+
+    let timeDifference = expirationTime.getTime() - currentTime.getTime();
+
+    // Convert milliseconds to hours and minutes
+    const hours = Math.floor(timeDifference / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+
 
     const obj = {
-      hours: remHours,
-      minutes: remMin,
+      hours: hours,
+      minutes: minutes,
+      // sec : remSec
     };
     return obj;
   }
- 
 }
